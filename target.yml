@@ -1,0 +1,7 @@
+--- # This script just gather the facts during the SSH connection
+- hosts: jenkinsgroup
+  user: ansibleuser
+  connection: ssh
+  become: yes
+  gather_facts: yes
+  
