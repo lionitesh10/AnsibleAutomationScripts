@@ -1,0 +1,9 @@
+--- # This script installs apache web server on client node
+- hosts: jenkinsgroup
+  user: ansibleuser
+  become: yes
+  connection: ssh
+  tasks:
+   - name: Installing Httpd on Ansible Client Node
+     action: yum name=httpd state=installed
+  gather_facts: yes
