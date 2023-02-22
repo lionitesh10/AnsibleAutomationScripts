@@ -1,0 +1,9 @@
+--- # This script removes uninstalls apache web server from ansible nodes
+- hosts: jenkinsgroup
+  user: ansibleuser
+  become: yes
+  connection: ssh
+  tasks:
+   - name: Uninstalling Apache Web Server from ansible nodes
+     action: yum name=httpd state=absent
+  gather_facts: yes
