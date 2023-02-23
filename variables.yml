@@ -1,0 +1,11 @@
+--- # Using Variables in Ansible Playbook
+- hosts: jenkinsgroup
+  user: ansibleuser
+  become: yes
+  connection: ssh
+  vars:
+     pkg: httpd
+  tasks:
+   - name: Installing '{{pkg}}' on nodes
+     yum: name='{{pkg}}' state=installed
+  gather_facts: yes
