@@ -13,6 +13,7 @@ Uses password or key to encrypt.
 <br/>
 <br/>
 To Create a encrypted playbook.
+<br/>
 [ansibleuser@ansible playbooks]$ ansible-vault create testvault.yml
 <br/>
 [ansibleuser@ansible playbooks]$ vi testvault.yml
