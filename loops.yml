@@ -1,0 +1,12 @@
+--- # Installing httpd and php via loops
+- hosts: jenkinsgroup
+  user: ansibleuser
+  become: yes
+  connection: ssh
+  tasks:
+   - name: Installing httpd and php on jenkinsgroup
+     action: yum name={{item}} state=installed
+     with_items:
+      - httpd
+      - php
+  gather_facts: yes
