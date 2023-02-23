@@ -1,0 +1,13 @@
+--- # Installing httpd with dependencies resolution using handlers
+- hosts: jenkinsgroup
+  user: ansibleuser
+  become: yes
+  connection: ssh
+  tasks:
+   - name: installing and starting httpd
+     action: yum name=httpd state=installed
+     notify: restart httpd
+  handlers:
+   - name: restart httpd
+     action: service name=httpd state=restarted
+  gather_facts: yes
