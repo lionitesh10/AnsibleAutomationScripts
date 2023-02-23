@@ -1,6 +1,8 @@
 ### To Check Syntax
 $ ansible-playbook playbook.yml --syntax-check
 
+### DRY RUN 
+$ ansible-playbook playbook.yml --check
 
 
 
